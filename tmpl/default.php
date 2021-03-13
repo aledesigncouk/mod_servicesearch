@@ -3,42 +3,20 @@ defined('_JEXEC') or die;
 $document = JFactory::getDocument();
 
 use Joomla\CMS\Router\Route;
-// move to media
-$document->addStyleSheet('modules/mod_nhssearch/assets/style.css');
+// style need do be moved in media
+$document->addStyleSheet('modules/mod_servicesearch/assets/style.css');
 
 $id = $params['page_id'];
+// add placeholder, button value to parameters
 $route = Route::_("index.php?Itemid={$id}");
 
-// get other op - move into class
-// print_r(JRequest::getVar('jform')['services']);
-
-/*
-    \'DEN\'
-    \'GPP\' -> API issue
-    \'GPB\'
-    \'OPT\'
-    \'PHA\'
-*/
 ?>
 
-<div class="nhs_search <?php echo $moduleclass_sfx; ?>">
-<?php echo $params['introtext']; ?>
-  
-    <form action="<?= $route; ?>" method="POST">                
+<div class="mod_servicesearch <?php echo $moduleclass_sfx; ?>">
 
-    <label for="service">Choose a service:</label>
-      <select id="service" name="service">
-        <option value="\'DEN\'">Dentist</option>
-        <option value="\'GPB\'">GP Practice</option>
-        <option value="\'OPT\'">Optician</option>
-        <option value="\'PHA\'">Pharmacy</option>
-    </select><br />
-
-    <label for="pcode">Postcode:</label>
-    <input name="pcode"><br />
-
-    <!-- <input type="hidden" id="count" name="count" value="<?php // echo $params['count']; ?>"> -->
-        
+    <form class="mod_servicesearch-form" action="<?= $route; ?>" method="POST">     
+    <div class="mod_servicesearch-title"><?php echo $params['introtext']; ?></div>           
+    <input type="text" name="pcode" placeholder="Postcode / City / Town">      
     <input type="submit" value="Search"></form>
 
 </div>

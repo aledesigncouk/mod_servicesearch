@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.9.0" client="site" method="upgrade">
-    <name>NHS Service Search</name>
+    <name>Service Search</name>
     <author>Alex</author>
-    <date>Sept 2020</date>
+    <date>Mar 2021</date>
     <version>1.0.0</version>
-    <folder>mod_nhssearch</folder>
-    <description>Search service supported by the NHS Api</description>
+    <folder>mod_servicesearch</folder>
+    <description>Search service</description>
     <files>
-        <filename>mod_nhssearch.xml</filename>
-        <filename module="mod_nhssearch">mod_nhssearch.php</filename>
+        <filename>mod_servicesearch.xml</filename>
+        <filename module="mod_servicesearch">mod_servicesearch.php</filename>
         <filename>index.html</filename>
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
@@ -20,32 +20,17 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <!-- <field name="key" type="text" default="" label="Subscription Key" description="Enter the subscription key, can be obtained here https://developer.api.nhs.uk/login" /> -->
-                <!-- search options here -->
                 <field
 					name="page_id"
 					type="menuitem"
 					label="Result Page"
-					description="MUST be selected the NHS Search"
+					description="MUST be selected the Service Search result page"
 					default="0"
 					filter="integer"
 					>
-                    <option value="0">Select the NHS Search Result page</option>
+                    <option value="0">Select the Service Search Result page</option> <!-- show onlye the compatible pages -->
                 </field>
                 <field name="introtext" type="textarea" default="default" label="Text to display before the form" description="" rows="10" cols="5" />
-
-               <!-- <field name="count" type="number" default="0" label="Choose an number" description="Default result items" min="0" max="50" step="1" /> -->
-               
-                <!-- add possibility to choose all the services 
-                
-                <fieldset id="jform_services" class="checkboxes"><ul><li><input type="checkbox" id="jform_services0"
-			        name="jform[services][]" value="one" /><label for="jform_services0"> One </label></li><li><input type="checkbox" id="jform_services1"
-			        name="jform[services][]" value="two" /><label for="jform_services1"> Two </label></li><li><input type="checkbox" id="jform_services2"
-			        name="jform[services][]" value="three" /><label for="jform_services2"> Three </label></li><li><input type="checkbox" id="jform_services3"
-			        name="jform[services][]" value="four" /><label for="jform_services3"> Four </label></li></ul>
-                </fieldset> -->
-
-                <!-- search by [options] and print selected result -->
 
             </fieldset>
             <!-- add standard op -->
@@ -96,7 +81,7 @@
 			</fieldset>
         </fields>
     </config>
-    <!--
-    <updateservers><server type="extension" name="nhssearch" priority="1">https://www.aledesign.co.uk/joomla/nhssearch_update.xml</server></updateservers>
+    <!-- updates to be set
+    <updateservers><server type="extension" name="nhssearch" priority="1">https://www.aledesign.co.uk/joomla/servicesearch_update.xml</server></updateservers>
     -->
 </extension>
