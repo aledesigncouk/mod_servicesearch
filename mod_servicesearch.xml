@@ -30,7 +30,7 @@
 					>
                     <option value="0">Select the Service Search Result page</option> <!-- show onlye the compatible pages -->
                 </field>
-                <field name="introtext" type="textarea" default="default" label="Text to display before the form" description="" rows="10" cols="5" />
+                <field name="introtext" type="text" default="default" label="Text to display before the form" description="" rows="10" cols="5" />
 
             </fieldset>
             <!-- add standard op -->
