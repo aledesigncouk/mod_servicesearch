@@ -20,7 +20,7 @@ $route = Route::_("index.php?Itemid={$id}");
     <div class="mod_servicesearch-title"><?php echo $params['introtext']; ?></div>           
     <input type="text" name="location" placeholder="Postcode / City / Town">
 
-    <select id="service" name="service">
+    <select class="mod_servicesearch-service" name="service">
         <option value=''>Select a service</option>
     <?php foreach($categories as $category): ?>
             <option value='<?= $category[1]; ?>'><?= $category[0]; ?></option>
