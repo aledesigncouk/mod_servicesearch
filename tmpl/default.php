@@ -18,9 +18,9 @@ $route = Route::_("index.php?Itemid={$id}");
 
     <form class="mod_servicesearch-form" action="<?= $route; ?>" method="POST">     
     <div class="mod_servicesearch-title"><?php echo $params['introtext']; ?></div>           
-    <input type="text" name="location" placeholder="Postcode / City / Town">
+    <input type="text" name="location" placeholder="Postcode / City / Town" required>
 
-    <select class="mod_servicesearch-service" name="service">
+    <select class="mod_servicesearch-service" name="service" required>
         <option value=''>Select a service</option>
     <?php foreach($categories as $category): ?>
             <option value='<?= $category[1]; ?>'><?= $category[0]; ?></option>
